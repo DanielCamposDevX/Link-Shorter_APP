@@ -1,46 +1,4 @@
 import styled from "styled-components";
-import Logo from "../assets/Logo.svg";
-import { BsFillTrashFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
-
-export default function Shorten() {
-  return (
-    <Page>
-      <Header>
-        <h1>Seja bem-vindo(a), Pessoa!</h1>
-        <div>
-          <Hbutton>Home</Hbutton>
-          <Link to="/ranking">
-            <Hbutton>Ranking</Hbutton>
-          </Link>
-          <Hbutton>Sair</Hbutton>
-        </div>
-      </Header>
-      <Container>
-        <CusImg src={Logo} />
-        <Container>
-          <div
-            style={{
-              width: "100%",
-              display: "flex",
-              justifyContent: "space-around",
-            }}
-          >
-            <Search placeholder="Links que cabem no bolso" />
-            <Sbutton>Encurtar Link</Sbutton>
-          </div>
-          <Shortlink>
-            <p>Link.com.br</p> <p>shorturl</p>{" "}
-            <p>Quantidade de visitantes: xxx</p>{" "}
-            <Delete>
-              <BsFillTrashFill />
-            </Delete>{" "}
-          </Shortlink>
-        </Container>
-      </Container>
-    </Page>
-  );
-}
 
 const Page = styled.div`
   display: flex;
@@ -145,3 +103,15 @@ const Delete = styled.button`
   align-items: center;
   color: #70b64b;
 `;
+
+export const ShortenComponents = {
+  Page,
+  Header,
+  Hbutton,
+  Container,
+  CusImg,
+  Search,
+  Sbutton,
+  Shortlink,
+  Delete,
+};

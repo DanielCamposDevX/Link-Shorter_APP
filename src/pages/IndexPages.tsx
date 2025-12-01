@@ -1,6 +1,6 @@
-import Ranking from "./ranking";
-import Shorten from "./shorten";
 import Login from "./Login";
+import Ranking from "./Ranking";
+import Shorten from "./Shorten";
 import Signup from "./Signup";
 
 export { Ranking };

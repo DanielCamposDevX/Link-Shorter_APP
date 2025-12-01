@@ -1,31 +1,4 @@
 import styled from "styled-components";
-import Logo from "../assets/Logo.svg";
-import { Link } from "react-router-dom";
-
-export default function Signup() {
-  return (
-    <Page>
-      <Header>
-        <Link to="/login">
-          <Hbutton style={{ color: "#5D9040" }}>Entrar</Hbutton>
-        </Link>
-        <Link to="/signup">
-          <Hbutton>Cadastrar-se</Hbutton>
-        </Link>
-      </Header>
-      <Container>
-        <CusImg src={Logo} />
-        <Container>
-          <Search placeholder="Nome" />
-          <Search placeholder="E-mail" />
-          <Search placeholder="Senha" />
-          <Search placeholder="Confirmar Senha" />
-          <Sbutton>Criar conta</Sbutton>
-        </Container>
-      </Container>
-    </Page>
-  );
-}
 
 const Page = styled.div`
   display: flex;
@@ -83,6 +56,7 @@ const Search = styled.input`
   border-radius: 12px;
   border: 1px solid rgba(0, 0, 0, 0.15);
   box-shadow: 0px 4px 24px 0px #78b1591f;
+  margin-bottom: 20px;
 `;
 
 const Sbutton = styled.button`
@@ -96,3 +70,13 @@ const Sbutton = styled.button`
   font-family: "Lexend Deca", sans-serif;
   margin-top: 20px;
 `;
+
+export const LoginComponents = {
+  Page,
+  Header,
+  Hbutton,
+  Container,
+  CusImg,
+  Search,
+  Sbutton,
+};

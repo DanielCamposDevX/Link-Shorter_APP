@@ -1,59 +1,4 @@
 import styled from "styled-components";
-import Logo from "../assets/Logo.svg";
-import Trophy from "../assets/Trophy.svg";
-
-import { useGet } from "../hooks/useGet";
-
-interface IRanking {
-  name: string;
-  linkCount: number;
-  visitCount: number;
-}
-
-interface Response {
-  ranking: IRanking[];
-}
-
-export default function Ranking() {
-  const { data } = useGet<Response>({
-    url: `${import.meta.env.VITE_APP_API_URL}/ranking`,
-    initialState: {
-      ranking: [],
-    },
-    instantFilters: {},
-  });
-
-  return (
-    <Page>
-      <Header>
-        <Hbutton style={{ color: "#5D9040" }}>Entrar</Hbutton>
-        <Hbutton>Cadastrar-se</Hbutton>
-      </Header>
-      <Container>
-        <CusImg src={Logo} />
-        <Container>
-          <span style={{ display: "flex", alignItems: "center" }}>
-            <img src={Trophy} />
-            <h1>Ranking</h1>
-          </span>
-          <RankContainer>
-            {data.ranking?.map((item, index) => (
-              <h1 key={index}>
-                <span>
-                  {index + 1}.{item.name}
-                </span>{" "}
-                - {item.linkCount} links - {item.visitCount} visualizações
-              </h1>
-            ))}
-          </RankContainer>
-        </Container>
-      </Container>
-      <Footer>
-        <h1>Crie sua conta para usar nosso serviço!</h1>
-      </Footer>
-    </Page>
-  );
-}
 
 const Page = styled.div`
   display: flex;
@@ -131,3 +76,13 @@ const Footer = styled.div`
     margin-top: 20px;
   }
 `;
+
+export const RankingComponents = {
+  Page,
+  Header,
+  Hbutton,
+  Container,
+  CusImg,
+  RankContainer,
+  Footer,
+};
